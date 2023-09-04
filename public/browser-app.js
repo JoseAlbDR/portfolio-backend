@@ -1,4 +1,4 @@
-const url = "/api/v1/products";
+const url = "/api/v1/projects";
 const fileFormDOM = document.querySelector(".file-form");
 
 const titleInputDOM = document.querySelector("#title");
@@ -25,6 +25,7 @@ imageInputDOM.addEventListener("change", async (e) => {
       },
     });
     imageValue = src;
+    console.log(imageValue);
   } catch (error) {
     imageValue = null;
     console.log(error);
@@ -33,15 +34,14 @@ imageInputDOM.addEventListener("change", async (e) => {
 
 fileFormDOM.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const titleValue = nameInputDOM.value;
-  const imageValue = imageInputDOM.value;
+  const titleValue = titleInputDOM.value;
   const descriptionValue = descriptionInputDOM.value;
   const gitHubValue = gitHubInputDOM.value;
   const liveValue = liveInputDOM.value;
   try {
     const project = {
       title: titleValue,
-      price: descriptionValue,
+      description: descriptionValue,
       image: imageValue,
       github: gitHubValue,
       live: liveValue,

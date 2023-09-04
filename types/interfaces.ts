@@ -5,7 +5,7 @@ import { MongoError } from "mongodb";
 // Poduct interface
 export interface IProject {
   title: string;
-  description: number;
+  description: string;
   image: string;
   github: string;
   live: string;
