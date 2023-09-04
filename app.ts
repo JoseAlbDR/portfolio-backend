@@ -16,7 +16,7 @@ app.set("trust proxy", 1);
 app.use(helmet());
 app.use(
   cors({
-    origin: ["https://www.jadero.dev"],
+    origin: ["https://www.jadero.dev", "https://jadero.dev"],
   })
 );
 cloudinary.config({
