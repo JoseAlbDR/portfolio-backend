@@ -10,6 +10,6 @@ export const createProject = async (req: Request, res: Response) => {
 };
 
 export const getAllProjects = async (_req: Request, res: Response) => {
-  const products: IProject[] = await Project.find({});
-  res.status(StatusCodes.OK).json({ products });
+  const projects: IProject[] = await Project.find({}).sort("updateAt");
+  res.status(StatusCodes.OK).json({ projects });
 };

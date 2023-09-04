@@ -7,7 +7,10 @@ import connectDB from "./db/connect";
 import notFoundMiddleware from "./middleware/not-found";
 import errorHandlerMiddleware from "./middleware/error-handler";
 import projectRouter from "./routes/projectRoutes";
+import cors from "cors";
+
 const app = express();
+app.use(cors());
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
